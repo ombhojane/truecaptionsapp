@@ -1,11 +1,12 @@
+import { TextIcon } from "lucide-react";
 import { Code, ImageIcon, MessageSquare, Music, VideoIcon } from "lucide-react";
 
 export const MAX_FREE_COUNTS = 5;
 
 export const tools = [
   {
-    label: 'Conversation',
-    icon: MessageSquare,
+    label: 'AI Text Detection',
+    icon: TextIcon,
     href: '/conversation',
     color: "text-violet-500",
     bgColor: "bg-violet-500/10",

@@ -1,30 +1,74 @@
-import { Settings } from "lucide-react";
-
 import { Heading } from "@/components/heading";
 import { SubscriptionButton } from "@/components/subscription-button";
 import { checkSubscription } from "@/lib/subscription";
+import { Newspaper, Text, Search } from "lucide-react";
 
-const SettingsPage = async () => {
-  const isPro = await checkSubscription();
-
-  return ( 
+const TrueCaptionsDocsPage = async () => {
+  return (
     <div>
       <Heading
-        title="Settings"
-        description="Manage account settings."
-        icon={Settings}
-        iconColor="text-gray-700"
-        bgColor="bg-gray-700/10"
+        icon={Newspaper}
+        title="True Captions Docs"
+        description="Explore the powerful features offered by True Captions."
+        bgColor="blue-100" // Adjust color to match your theme
+        iconColor="blue-600" // Adjust color to match your theme
       />
-      <div className="px-4 lg:px-8 space-y-4">
-        <div className="text-muted-foreground text-sm">
-          {isPro ? "You are currently on a Pro plan." : "You are currently on a free plan."}
+
+      <div className="px-4 lg:px-8 space-y-8">
+        <h2 className="text-2xl font-bold mb-4">Featured Capabilities</h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Feature 1: AI Text Detector */}
+          <FeatureCard
+            title="AI Text Detector"
+            description="Analyze text content with advanced AI algorithms. Gain insights into patterns and sentiments."
+            icon={Text} // Placeholder icon for now
+          />
+
+          {/* Feature 2: Image Insights */}
+          <FeatureCard
+            title="Image Insights"
+            description="Unlock details, patterns, and information within images using cutting-edge technology."
+            icon={Search} // Placeholder icon for now
+          />
+
+          {/* Feature 3: Fake News Detector */}
+          <FeatureCard
+            title="Fake News Detector"
+            description="Stay informed and avoid misinformation. Sophisticated algorithms identify potential misinformation in news content."
+            // Note: Replace "/* Missing Icon */" with a suitable icon
+            icon={Newspaper} 
+          />
         </div>
-        <SubscriptionButton isPro={isPro} />
+
+        <h2 className="text-2xl font-bold mb-4">Further Exploration & Relevant Links</h2>
+
+        <ul className="space-y-4">
+          <li>
+            <a href="/docs/detailed-text-analysis">Dive deeper into AI Text Detector capabilities.</a>
+          </li>
+          <li>
+            <a href="/docs/image-recognition-examples">Discover real-world use cases for Image Insights.</a>
+          </li>
+          <li>
+            <a href="/docs/combating-misinformation">Learn how the Fake News Detector works.</a>
+          </li>
+        </ul>
       </div>
     </div>
-   );
-}
- 
-export default SettingsPage;
+  );
+};
 
+const FeatureCard = ({ title, description, icon }: { title: string, description: string, icon: React.ComponentType }) => (
+  <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className="flex items-center mb-4">
+      <div className="mr-4">
+        
+      </div>
+      <h2 className="text-xl font-bold">{title}</h2>
+    </div>
+    <p className="text-gray-700">{description}</p>
+  </div>
+);
+
+export default TrueCaptionsDocsPage;

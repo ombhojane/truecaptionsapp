@@ -3,11 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Montserrat } from 'next/font/google'
-import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
+import { AlignHorizontalDistributeCenterIcon, ClipboardPasteIcon, Code, ImageIcon, LayoutDashboard, MessageSquare, Music, NewspaperIcon, Settings, TextIcon, VideoIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-import { cn } from "@/lib/utils";
+import { absoluteUrl, cn } from "@/lib/utils";
 import { FreeCounter } from "@/components/free-counter";
+import { TrueCaptionsHero } from "./landing-hero";
+import { UserAvatar } from "./user-avatar";
 
 const poppins = Montserrat ({ weight: '600', subsets: ['latin'] });
 
@@ -19,38 +21,26 @@ const routes = [
     color: "text-sky-500"
   },
   {
-    label: 'Conversation',
-    icon: MessageSquare,
+    label: 'AI Text Detection',
+    icon: TextIcon,
     href: '/conversation',
     color: "text-violet-500",
   },
   {
-    label: 'Image Generation',
+    label: 'Image Insights',
     icon: ImageIcon,
     color: "text-pink-700",
     href: '/image',
   },
   {
-    label: 'Video Generation',
-    icon: VideoIcon,
+    label: 'Fake news Detection',
+    icon: NewspaperIcon,
     color: "text-orange-700",
     href: '/video',
   },
   {
-    label: 'Music Generation',
-    icon: Music,
-    color: "text-emerald-500",
-    href: '/music',
-  },
-  {
-    label: 'Code Generation',
-    icon: Code,
-    color: "text-green-700",
-    href: '/code',
-  },
-  {
-    label: 'Settings',
-    icon: Settings,
+    label: 'About True Captions',
+    icon: AlignHorizontalDistributeCenterIcon,
     href: '/settings',
   },
 ];
@@ -72,7 +62,7 @@ export const Sidebar = ({
             <Image fill alt="Logo" src="/logo.png" />
           </div>
           <h1 className={cn("text-2xl font-bold", poppins.className)}>
-            Genius
+            True Captions
           </h1>
         </Link>
         <div className="space-y-1">
