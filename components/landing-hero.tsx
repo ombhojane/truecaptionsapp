@@ -16,7 +16,6 @@ export const TrueCaptionsHero = () => {
                 "Text Validation.",
                 "Image Insights.",
                 "News Verification.",
-                "Social Media Validation."
               ],
               autoStart: true,
               loop: true,
@@ -28,14 +27,14 @@ export const TrueCaptionsHero = () => {
         Ensure the accuracy of your content before sharing it with the world.
       </div>
       <div>
-        <Link href="/login">
+        <Link href="/sign-in">
           <Button variant="premium" className="md:text-lg p-4 md:p-6 rounded-full font-semibold">
-            Login to True Captions
+            Get Started with True Captions
           </Button>
         </Link>
       </div>
       <div className="text-zinc-400 text-xs md:text-sm font-normal">
-        No credit card required.
+        Explore Dynamic Features to validate your content
       </div>
     </div>
   );
